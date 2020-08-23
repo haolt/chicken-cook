@@ -1,0 +1,172 @@
+<!-- Mixin -->
+mixin post(title, index)
+  article.blog-post
+    a(href='./blog-post.html')
+      img.blog-post__img(src=`./assets/post/${ index === 8 ? 1 : ( index < 4 ? index + 1 : index - 3 ) }.png` alt='post_thumbnail')
+      div.blog-post__content
+        h3.blog-post__title= title
+        p.blog-post__excerpt
+          | Easy assembly as well. Thankyou for the quick delivery. Now we can&rsquo;t wait to bring home our first chickens. Thanks again My Chicken Coop
+        button.blog-post__btn(href='blog/chicken/spring-to-life-with-backyard-chickens') View post
+
+mixin postCustom(title, index)
+  a(href='./blog-post.html')
+    article.blog-post.custom
+      .blog-post__img-wrap
+        img.blog-post__img(src=`./assets/post/${ index + 1 }-small.png` alt='post_thumbnail')
+      div.blog-post__content-custom
+        h3.blog-post__title.custom= title
+        block
+
+<!-- Content -->
+doctype html
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+  meta(name='keywords' content='Chicken coop, Chicken coops, chicken coop for sale, chicken coops for sale, chicken coops Australia, chickencoops, chicken coup')
+  meta(name='description' content='Premium chickens coops at the lowest price guarantee! Fast Australia wide delivery. Free transit insurance & 100% Money Back Guarantee. ')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0')
+  meta(name='google-site-verification' content='97bkWVzvmk0v2D1AwgtGZgcLGUlY8KMWxjvSrklRnOA')
+  meta(name='msvalidate.01' content='C48A9D1789F9DA8AF77F49840275DE9C')
+  meta(property='og:image' content='/assets/website_logo.png')
+  meta(property='og:title' content='Chicken Coop For Sale | Buy Chicken Coops Australia | Chicken Coup & Hutch')
+  meta(property='og:site_name' content='Chicken Coop For Sale | Buy Chicken Coops Australia | Chicken Coup & Hutch')
+  title Blog post | Buy Chicken Coops Australia | Chicken Coup &amp; Hutch
+  link(rel='canonical' href='https://www.mychickencoop.com.au/')
+  link(rel='shortcut icon' href='https://www.mychickencoop.com.au/assets/favicon_logo.png')
+  link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" media="all")
+  link(rel='stylesheet' href='https://www.mychickencoop.com.au/assets/themes/2020-04-atomic/css/app.css?1597729710')
+  link(rel='stylesheet' href='https://www.mychickencoop.com.au/assets/themes/2020-04-atomic/css/style.css?1222&1597729710')
+  link(rel='stylesheet' href='styles.css')
+.blog
+  .container
+    ul.breadcrumb.breadcrumb-blog-post
+      li
+        a(href='./') Home
+      li
+        a(href='./blog.html') Blog
+      li
+        a(href='./blog-chicken.html') Chicken
+      li
+        a(href='./blog-post.html') Plymouth Rock Chicken Breed
+        
+    h3.blog-post-title Plymouth Rock Chicken Breed
+    section.row.blog-content
+      .col-xs-12.col-md-9
+        article.article
+          img(src='./assets/post/bg-chickens.png' class="article__thumbnail")
+          p.article__content
+            | Plymouth Rock chickens are good all-rounders. They are a dual-purpose bird, meaning they lay a high number of eggs and produce tasty meat.
+            br
+            | They also make great backyard pets, particularly for families with children or people that have never owned chickens before.
+          h5.article__subTitle Breed Varieties
+          p.article__content
+            | There are multiple varieties of Plymouth Rock chickens. The original and most common is the Barred Plymouth Rock (also known as the Barred Rock).
+            br
+            | The White Plymouth Rock is also common. All other varieties are rare. These include:
+            ul.article__list
+              - var colors = [ 'Black', 'Blue', 'Buff', 'Colombian', 'Partridge', 'Silver Penciled' ]
+              each item in colors
+                li
+                  i.fa.fa-chevron-right(aria-hidden='true')
+                  span= item
+          h5.article__subTitle Size and Health
+          h6.article__subTitle2 Temperament
+          p.article__content
+            | Plymouth Rock chickens have a lovely temperament. They are friendly and calm.
+            br
+            | This makes them very easy to approach and to hold, especially if they have been handled by humans regularly from a young age.
+            br
+            | They get along well with other breeds of chicken and very rarely fight or cause issues. They are more likely to be bullied by more aggressive breeds.
+          h6.article__subTitle2 Eggs
+          p.article__content
+            | Plymouth Rock hens are good egg layers. They lay around 280 eggs per year. Their eggs are large and light brown.
+            br
+            | They begin laying when they are between 16 and 22 weeks old. They lay best for the first few years and start declining egg production around 3 years old. Some hens have been known to continue to lay until they are 10!
+            br
+            | They lay consistently throughout the year, even when it is cold.
+            br
+            | Plymouth Rocks are not particularly broody but can be reliable sitters if they are allowed to keep their eggs.
+          table.table.table-borderless.article__table
+            thead
+              tr
+                th Heading
+                th Value
+            tbody
+              tr
+                td Row 1
+                td Our office, warehouses and service centre is located
+              tr
+                td Row 2
+                td Our Professional Team handle large volume
+              tr
+                td Row 3
+                td Orders and sends out everyday.
+              tr
+                td Row 4
+                td We are committed to provide you the highest quality
+          h6.article__subTitle2 Share
+          ul.list-inline.article__share-btns
+            li
+              a(href='https://www.facebook.com/mychickencoop' target='_blank')
+                i.fa.fa-facebook
+            li
+              a(href='https://twitter.com/mychickencoopau' target='_blank')
+                i.fa.fa-twitter
+            li
+              a(href='https://twitter.com/mychickencoopau' target='_blank')
+                i.fa.fa-google-plus
+            li
+              a(href='https://twitter.com/mychickencoopau' target='_blank')
+                i.fa.fa-pinterest
+            li
+              a(href='https://twitter.com/mychickencoopau' target='_blank')
+                i.fa.fa-tumblr
+          h5.article__subTitle Leave a comment
+          form(class="frm")
+            label(for="title" class="article__subTitle2")
+              | Title For Comment
+              input(type="text" name="title" id="title" class="frm__field")
+            label(for="comment" class="article__subTitle2")
+              | Your Comment
+              textarea(name="comment" id="comment" class="frm__field" rows="4" cols="50")
+            label(for="name" class="article__subTitle2")
+              | Your name
+              input(type="text" name="name" id="name" class="frm__field")
+            label(for="email" class="article__subTitle2")
+              | Your email address
+              input(type="email" name="email" id="email" class="frm__field")
+            button(type="submit" class="btn btn-primary frm__btn")
+              | Post comment
+            small
+              | Comments have to be approved before showing up
+      .col-xs-12.col-md-3
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title Posts by Categories
+          ul.list-group
+            li
+              a.list-group-item(href='./blog-chicken.html')
+                | Chicken
+            li
+              a.list-group-item(href='./blog-chicken.html')
+                | Cat
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title Best Sellers
+          ul.list-group.best-sellers
+            - var lastestPostsTitles = [ 'Premium Chicken Coop', 'Deluxe Chicken Coop', 'Villa Chicken Coop', 'Premium Chicken Coop', 'Premium Chicken Coop' ];
+            each title, index in lastestPostsTitles
+              li.best-sellers__item
+                +postCustom(title, index)
+                    p.blog-post__price
+                      del $389.00
+                      span $389.00
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title Lastest posts
+          .lastest-post
+            - var lastestPostsTitles = [ 'Chicken Coop For Sale Mid Year', 'Clearance sale - Hurry Stocks are limited', 'we offer affordable chicken coops and hyphan', 'Spring to life with backyard chickens' ];
+            each title, index in lastestPostsTitles
+              +postCustom(title, index)
+                  p.blog-post__excerpt.custom
+                    | Easy assembly as well. Thankyou for the quick delivery. Now we can’ say anything
